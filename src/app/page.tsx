@@ -43,7 +43,7 @@ export default function Home() {
 						<Flex
 							position="relative"
 							flex={2} paddingTop="56" paddingX="xl">
-							<Logo size="xl" icon={false} style={{zIndex: '1'}}/>
+							<Logo size="xl" icon={false} wordmark style={{zIndex: '1'}}/>
 						</Flex>
 						<Flex
 							position="relative"
@@ -63,7 +63,7 @@ export default function Home() {
 								<span className="font-code">
 									<LetterFx
 										trigger="instant">
-										Helping designers code and developers design
+										A Solo Developer, 100% Self-Taught
 									</LetterFx>
 								</span>
 							</Heading>
