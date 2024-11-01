@@ -3,8 +3,7 @@
 import React from "react";
 
 import {
-  Arrow,
-  Button,
+  Badge,
   Flex,
   Grid,
   Heading,
@@ -96,12 +95,9 @@ export default function Home() {
                   </LetterFx>
                 </span>
               </Heading>
-              <Button id="aboutme" href="/aboutme" variant="primary">
-                <Flex alignItems="center">
-                  About Me
-                  <Arrow trigger="#aboutme" />
-                </Flex>
-              </Button>
+              <Badge arrow={true} href="/aboutme">
+                About Me
+              </Badge>
             </Flex>
           </Flex>
           <Grid
