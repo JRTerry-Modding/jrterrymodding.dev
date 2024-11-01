@@ -2,26 +2,17 @@
 
 import React from 'react';
 
-import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, Logo, Background, LetterFx, Arrow } from '@/once-ui/components';
+import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, Logo, LetterFx, Arrow } from '@/once-ui/components';
 import Link from 'next/link';
 
 export default function Home() {
 	const links = [
 		{
-			href: "https://once-ui.com/docs/theming",
-			title: "Themes",
-			description: "Style your app in minutes.",
+			href: "/projects",
+			title: "Projects",
+			description: "View our projects.",
 		},
-		{
-			href: "https://once-ui.com/docs/flexComponent",
-			title: "Layout",
-			description: "Build responsive layouts.",
-		},
-		{
-			href: "https://once-ui.com/docs/typography",
-			title: "Typography",
-			description: "Scale text automatically.",
-		},
+
 	];
 
 	return (
@@ -43,7 +34,7 @@ export default function Home() {
 						<Flex
 							position="relative"
 							flex={2} paddingTop="56" paddingX="xl">
-							<Logo size="xl" icon={false} wordmark style={{zIndex: '1'}}/>
+							<Logo size="custom" icon={false} wordmark style={{zIndex: '1'}}/>
 						</Flex>
 						<Flex
 							position="relative"
@@ -55,7 +46,7 @@ export default function Home() {
 									width: 'fit-content',
 									padding: 'var(--static-space-8) var(--static-space-16)',
 									backdropFilter: 'blur(var(--static-space-1))'}}>
-								Start by editing <span className="brand-on-background-medium">app/page.tsx</span>
+								Josh, Owner of <span className="brand-on-background-medium">JRTerry Modding</span>
 							</InlineCode>
 							<Heading
 								wrap="balance"
@@ -68,12 +59,12 @@ export default function Home() {
 								</span>
 							</Heading>
 							<Button
-								id="readDocs"
-								href="https://once-ui.com/docs"
-								variant="secondary">
+								id="aboutme"
+								href="/aboutme"
+								variant="primary">
 								<Flex alignItems="center">
-									Read docs
-									<Arrow trigger="#readDocs"/>
+									About Me
+									<Arrow trigger="#aboutme"/>
 								</Flex>
 							</Button>
 						</Flex>
@@ -121,19 +112,18 @@ export default function Home() {
 				justifyContent="space-between">
 				<Text
 					variant="body-default-s" onBackground="neutral-weak">
-					© 2024 Once UI, <Link href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">MIT License</Link>
+					© 2024 JRTerry Modding, <Link href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">MIT License</Link>
 				</Text>
 				<Flex
 					gap="12">
 					<Button
-						href="https://github.com/once-ui-system/nextjs-starter"
+						id='github'
+						href="https://github.com/JRTerry-Modding"
 						prefixIcon="github" size="s" variant="tertiary">
+						<Flex>
 						GitHub
-					</Button>
-					<Button
-						href="https://discord.com/invite/5EyAQ4eNdS"
-						prefixIcon="discord" size="s" variant="tertiary">
-						Discord
+						<Arrow trigger="#github"/>
+						</Flex>
 					</Button>
 				</Flex>
 			</Flex>

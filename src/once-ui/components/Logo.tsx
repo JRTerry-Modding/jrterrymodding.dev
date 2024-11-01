@@ -13,11 +13,12 @@ const sizeMap: Record<string, SpacingToken> = {
     m: '32',
     l: '40',
     xl: '48',
+    custom: '104',
 };
 
 interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     className?: string;
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+    size?: 'xs' | 's' | 'm' | 'l' | 'xl' | 'custom';
     style?: React.CSSProperties;
     wordmark?: boolean;
     icon?: boolean;

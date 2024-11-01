@@ -26,6 +26,11 @@ import {
 	FaGithub
 } from "react-icons/fa6";
 
+import {
+	SiModrinth,
+	SiCurseforge
+} from "react-icons/si";
+
 export const iconLibrary: Record<string, IconType> = {
 	chevronUp: HiChevronUp,
     chevronDown: HiChevronDown,
@@ -44,6 +49,8 @@ export const iconLibrary: Record<string, IconType> = {
 	openLink: HiOutlineLink,
 	discord: FaDiscord,
 	github: FaGithub,
+	modrinth: SiModrinth,
+    curseforge: SiCurseforge,
 	arrowUpRight: HiArrowUpRight,
 	minus: HiMiniMinus,
 	plus: HiMiniPlus,
