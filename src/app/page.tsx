@@ -23,6 +23,16 @@ export default function Home() {
       title: "Projects",
       description: "View our projects.",
     },
+    {
+      href: "/contact",
+      title: "Contact Us",
+      description: "Contact us for any questions.",
+    },
+    {
+      href: "/donate",
+      title: "Donate?",
+      description: "Consider donating to help keep things alive.",
+    },
   ];
 
   return (
