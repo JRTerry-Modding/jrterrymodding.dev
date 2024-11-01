@@ -1,5 +1,6 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
+import localFont from 'next/font/local'
 
 import classNames from 'classnames';
 import { headers } from "next/headers";
@@ -12,9 +13,15 @@ import { Background, Flex } from '@/once-ui/components'
 import { Inter } from 'next/font/google'
 import { Roboto_Mono } from 'next/font/google';
 
-const primary = Inter({
+const primary = localFont({
+	src: 'fonts/secondary.ttf',
 	variable: '--font-primary',
-	subsets: ['latin'],
+	display: 'swap',
+})
+
+const secondary = localFont({
+	src: './fonts/secondary.ttf',
+	variable: '--font-secondary',
 	display: 'swap',
 })
 
@@ -32,7 +39,6 @@ type FontConfig = {
 	Replace with code for secondary and tertiary fonts
 	from https://once-ui.com/customize
 */
-const secondary: FontConfig | undefined = undefined;
 const tertiary: FontConfig | undefined = undefined;
 /*
 */

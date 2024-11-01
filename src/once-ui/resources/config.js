@@ -3,9 +3,9 @@ const baseURL = 'demo.once-ui.com'
 // default customization applied to the HTML in the main layout.tsx
 const style = {
     theme:       'dark',        // dark | light
-    neutral:     'slate',        // sand | gray | slate
-    brand:       'indigo',        // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-    accent:      'violet',      // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    neutral:     'custom',        // sand | gray | slate
+    brand:       'custom',        // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    accent:      'custom',      // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
     solid:       'color',    // color | contrast
     solidStyle:  'flat',        // flat | plastic
     border:      'playful',     // rounded | playful | conservative

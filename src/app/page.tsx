@@ -62,7 +62,7 @@ export default function Home() {
 								variant="display-strong-s">
 								<span className="font-code">
 									<LetterFx
-										trigger="instant">
+										trigger="instant" speed={"medium"}>
 										A Solo Developer, 100% Self-Taught
 									</LetterFx>
 								</span>
