@@ -4,7 +4,6 @@ import {
   Button,
   Flex,
   Logo,
-  NavIcon,
   SmartLink,
   ToggleButton,
   UserMenu,
@@ -34,16 +33,15 @@ const Header: React.FC<HeaderProps> = ({
       }}
       as="header"
       fillWidth
-      paddingX="m"
+      paddingX="xs"
       height="56"
       alignItems="center"
       background="surface"
     >
-      <Flex hide="s">
+      <Flex hide={"s"}>
         <Logo />
       </Flex>
-      <Flex show="s" gap="4" alignItems="center">
-        <NavIcon />
+      <Flex show={"s"}>
         <Logo wordmark={false} />
       </Flex>
       {authenticated ? (
@@ -115,7 +113,6 @@ const Header: React.FC<HeaderProps> = ({
       ) : (
         <Flex fillWidth alignItems="center" justifyContent="flex-end">
           <Flex
-            hide="s"
             textVariant="label-default-s"
             fillWidth
             gap="4"

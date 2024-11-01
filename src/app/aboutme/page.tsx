@@ -17,6 +17,7 @@ export default function AboutMe() {
       flex={1}
     >
       <Nav />
+
       <Flex
         position="relative"
         as="section"
