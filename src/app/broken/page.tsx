@@ -6,26 +6,13 @@ import {
   Arrow,
   Button,
   Flex,
-  Grid,
   Heading,
-  Icon,
   InlineCode,
   LetterFx,
   Logo,
-  Text,
 } from "@/once-ui/components";
-import Link from "next/link";
-import { Footer } from "@/app/components/footer";
 
-export default function Home() {
-  const links = [
-    {
-      href: "/projects",
-      title: "Projects",
-      description: "View our projects.",
-    },
-  ];
-
+export default function Broken() {
   return (
     <Flex
       fillWidth
@@ -91,12 +78,12 @@ export default function Home() {
                 align={"center"}
               >
                 <span className="font-code">
-                  <LetterFx trigger="instant" speed={"slow"}>
+                  <LetterFx trigger="hover" speed={"slow"}>
                     A Solo Developer, 100% Self-Taught
                   </LetterFx>
                 </span>
               </Heading>
-              <Button id="aboutme" href="/aboutme" variant="primary">
+              <Button id="aboutme" href="/broken" variant="primary">
                 <Flex alignItems="center">
                   About Me
                   <Arrow trigger="#aboutme" />
@@ -104,39 +91,15 @@ export default function Home() {
               </Button>
             </Flex>
           </Flex>
-          <Grid
-            radius="l"
-            border="neutral-medium"
-            borderStyle="solid-1"
-            columns="repeat(3, 1fr)"
-            tabletColumns="1col"
-            mobileColumns="1col"
-            fillWidth
-          >
-            {links.map((link) => (
-              <Link
-                target="_self"
-                style={{ padding: "var(--responsive-space-l)" }}
-                key={link.href}
-                href={link.href}
-              >
-                <Flex fillWidth paddingY="8" gap="8" direction="column">
-                  <Flex fillWidth gap="12" alignItems="center">
-                    <Text variant="body-strong-m" onBackground="neutral-strong">
-                      {link.title}
-                    </Text>
-                    <Icon size="s" name="arrowUpRight" />
-                  </Flex>
-                  <Text variant="body-default-s" onBackground="neutral-weak">
-                    {link.description}
-                  </Text>
-                </Flex>
-              </Link>
-            ))}
-          </Grid>
+          <Heading>Please! Fix Me!</Heading>
+          <Button id="fix" href="/">
+            <Flex alignItems="center">
+              FIX
+              <Arrow trigger="#fix" />
+            </Flex>
+          </Button>
         </Flex>
       </Flex>
-      <Footer />
     </Flex>
   );
 }
