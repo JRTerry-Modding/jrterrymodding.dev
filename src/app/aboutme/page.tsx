@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Flex, Heading, Icon, Logo, Text } from "@/once-ui/components";
+import { Flex, Heading, Icon, Text } from "@/once-ui/components";
 import { Footer } from "@/app/components/footer";
 import { Nav } from "@/app/components/nav";
 
@@ -38,15 +38,14 @@ export default function AboutMe() {
           padding="l"
           gap="l"
         >
-          <Flex mobileDirection="column" fillWidth gap="24">
-            <Flex position="relative" flex={2} paddingTop="56" paddingX="xl">
-              <Logo
-                size="custom"
-                icon={true}
-                wordmark={false}
-                style={{ zIndex: "1" }}
-              />
-            </Flex>
+          <Flex
+            mobileDirection="column"
+            fillWidth
+            fillHeight
+            gap="24"
+            alignItems="center"
+          >
+            <Flex padding={"32"}></Flex>
             <Flex
               position="relative"
               flex={4}
@@ -63,12 +62,12 @@ export default function AboutMe() {
                 About Me
               </Heading>
               <Icon name="chevronDown" />
-              <Text>
+              <Text variant={"code-default-s"}>
                 I'm Josh, a solo and self taught developer, working together
                 with my partner, Emily, for ideas and graphics.
               </Text>
               <></>
-              <Text>
+              <Text variant={"code-default-s"}>
                 Ive been teaching myself how to code since 2022, learning
                 multiple languages and frameworks.
               </Text>
@@ -81,11 +80,34 @@ export default function AboutMe() {
                 <Icon name="kotlin" />
                 <Icon name="flutter" />
               </Flex>
-              <Text>
+              <Text variant={"code-default-s"}>
                 At the time of writing this, I have 1 Minecraft mod published
                 with 189 downloads. It isn't many, but its a massive achievement
                 for me as my first published project!
               </Text>
+              <Flex></Flex>
+              <Heading
+                wrap="balance"
+                variant="display-default-xs"
+                align={"center"}
+              >
+                IDE of choice
+              </Heading>
+
+              <Text variant={"code-default-s"}>IntelliJ Ultimate</Text>
+              <Flex></Flex>
+              <Heading
+                wrap="balance"
+                variant="display-default-xs"
+                align={"center"}
+              >
+                Games I play
+              </Heading>
+
+              <Text variant={"code-default-s"}>Minecraft</Text>
+              <Text variant={"code-default-s"}>Terraria</Text>
+              <Text variant={"code-default-s"}>Satisfactory</Text>
+              <Text variant={"code-default-s"}>BeatSaber</Text>
             </Flex>
           </Flex>
         </Flex>

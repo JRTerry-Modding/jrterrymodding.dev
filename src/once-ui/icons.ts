@@ -29,6 +29,7 @@ import {
   SiFlutter,
   SiJavascript,
   SiKotlin,
+  SiMinecraft,
   SiModrinth,
 } from "react-icons/si";
 
@@ -68,4 +69,5 @@ export const iconLibrary: Record<string, IconType> = {
   java: DiJava,
   kotlin: SiKotlin,
   flutter: SiFlutter,
+  minecraft: SiMinecraft,
 };
