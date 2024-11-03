@@ -22,8 +22,8 @@ const meta = {
 
 // default open graph data
 const og = {
-  title: "JRTerry Modding - A self taught developer",
-  description: "",
+  title: "JRTerry Modding",
+  description: "A self taught developer",
   type: "website",
 };
 

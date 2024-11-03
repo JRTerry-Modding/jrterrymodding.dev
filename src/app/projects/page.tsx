@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Flex, Heading, Icon } from "@/once-ui/components";
+import { Flex } from "@/once-ui/components";
 import { Footer } from "@/app/components/footer";
 import { Nav } from "@/app/components/nav";
 import { ProjectFormat } from "@/app/components/project-format";
@@ -21,11 +21,7 @@ export default function AboutMe() {
 
       <Flex
         position="relative"
-        as="section"
-        overflow="hidden"
         fillWidth
-        minHeight="0"
-        maxWidth={68}
         direction="column"
         alignItems="center"
         flex={1}
@@ -51,25 +47,15 @@ export default function AboutMe() {
               position="relative"
               flex={4}
               gap="24"
-              marginBottom="104"
               direction="column"
               alignItems="center"
             >
-              <Heading
-                wrap="balance"
-                variant="display-strong-s"
-                align={"center"}
-              >
-                Projects
-              </Heading>
-              <Icon name="chevronDown" />
               <Flex>
                 <Flex
                   position="relative"
                   flex={4}
                   gap="24"
                   marginBottom="104"
-                  direction="column"
                   alignItems="center"
                 >
                   <ProjectFormat />
