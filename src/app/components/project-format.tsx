@@ -29,8 +29,8 @@ export const ProjectFormat = () => {
               : null;
 
             const curseapikeyparts =
-              process.env.NEXT_PUBLIC_CURSEFORGE_API_KEY.split(",");
-            const curseapikey = curseapikeyparts.join("$");
+              process.env.NEXT_PUBLIC_CURSEFORGE_API_KEY?.split(",");
+            const curseapikey = curseapikeyparts?.join("$");
             const curseforgeData = mod.curseforgeid
               ? await fetch(
                   `https://api.curseforge.com/v1/mods/${mod.curseforgeid}`,
@@ -38,7 +38,7 @@ export const ProjectFormat = () => {
                     method: "GET",
                     headers: {
                       Accept: "application/json",
-                      "X-Api-Key": curseapikey,
+                      "X-Api-Key": curseapikey ? curseapikey : "",
                     },
                   },
                 )
