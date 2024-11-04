@@ -1,15 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { Fragment, use, useEffect, useState } from "react";
 import { DataGen } from "@/app/components/dataGen";
-import { Flex, Heading, Text } from "@/once-ui/components";
+import { Flex, Heading } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import Image from "next/image";
-import Test from "./md.mdx";
+import { compile, run } from "@mdx-js/mdx";
 
-export default function Project({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+import * as runtime from "react/jsx-runtime";
+import { Content } from "next/dist/compiled/@next/font/dist/google";
+
+export default async function Project({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = use(params).slug;
   const data = DataGen(slug);
 
   const title = data.title;
@@ -18,6 +25,29 @@ export default function Project({ params }: { params: { slug: string } }) {
   const links = data.links;
   const downloads = data.downloads;
 
+  //
+  //
+  const [mdxModule, setMdxModule] = useState();
+  const Body = mdxModule ? mdxModule.default : Fragment;
+
+  useEffect(
+    function () {
+      (async function () {
+        setMdxModule(await run(body, { ...runtime, baseUrl: import.meta.url }));
+      })();
+    },
+    [body],
+  );
+
+  //fix doesnt work in use client
+  const body = String(
+    await compile(data.body, {
+      outputFormat: "function-body",
+      /* …otherOptions */
+    }),
+  );
+
+  //
   return (
     <Flex
       fillWidth
@@ -72,43 +102,13 @@ export default function Project({ params }: { params: { slug: string } }) {
               >
                 {title}
               </Heading>
-              <Test />
+
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
               <Flex padding={"4"} />
-              <Text variant={"code-default-s"}>
-                Ive been teaching myself how to code since 2022, learning
-                multiple languages and frameworks.
-              </Text>
+              <Content />
 
-              <Text variant={"code-default-s"}>
-                At the time of writing this, I have 1 Minecraft mod published
-                with 189 downloads. It isn't many, but its a massive achievement
-                for me as my first published project!
-              </Text>
               <Flex padding={"4"} />
-              <Heading
-                wrap="balance"
-                variant="display-default-xs"
-                align={"center"}
-              >
-                IDE of choice
-              </Heading>
-
-              <Text variant={"code-default-s"}>IntelliJ Ultimate</Text>
-              <Flex padding={"4"} />
-              <Heading
-                wrap="balance"
-                variant="display-default-xs"
-                align={"center"}
-              >
-                Games I play
-              </Heading>
-
-              <Text variant={"code-default-s"}>Minecraft</Text>
-              <Text variant={"code-default-s"}>Terraria</Text>
-              <Text variant={"code-default-s"}>Satisfactory</Text>
-              <Text variant={"code-default-s"}>BeatSaber</Text>
             </Flex>
           </Flex>
         </Flex>

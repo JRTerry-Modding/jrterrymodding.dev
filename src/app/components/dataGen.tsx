@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 export const DataGen = (modrinthid: any) => {
@@ -12,6 +14,7 @@ export const DataGen = (modrinthid: any) => {
   const [description, setDescription] = useState("");
   const [git, setGit] = useState("");
   const [slug, setSlug] = useState("");
+  const [body, setBody] = useState("");
 
   useEffect(() => {
     const setInfo = async () => {
@@ -60,6 +63,7 @@ export const DataGen = (modrinthid: any) => {
       setDescription(modrinthData ? modrinthData.description : "");
       setGit(modrinthData ? modrinthData.source_url : "");
       setSlug(modrinthData ? modrinthData.slug : "");
+      setBody(modrinthData ? modrinthData.body : "");
     };
     setInfo();
   }, []);
@@ -72,5 +76,6 @@ export const DataGen = (modrinthid: any) => {
     downloads: downloads,
     links: links,
     slug: slug,
+    body: body,
   };
 };
