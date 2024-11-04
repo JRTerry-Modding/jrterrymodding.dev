@@ -40,6 +40,7 @@ export default async function Project({
   );
 
   //fix doesnt work in use client
+  // https://mdxjs.com/guides/mdx-on-demand/
   const body = String(
     await compile(data.body, {
       outputFormat: "function-body",
