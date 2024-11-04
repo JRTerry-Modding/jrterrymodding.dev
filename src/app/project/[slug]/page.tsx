@@ -1,12 +1,23 @@
 "use client";
 
 import React from "react";
-
-import { Flex, Heading, Icon, Text } from "@/once-ui/components";
-import { Footer } from "@/app/components/footer";
+import { DataGen } from "@/app/components/dataGen";
+import { Flex, Heading, Text } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
+import { Footer } from "@/app/components/footer";
+import Image from "next/image";
+import Test from "./md.mdx";
 
-export default function AboutMe() {
+export default function Project({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
+  const data = DataGen(slug);
+
+  const title = data.title;
+  const description = data.description;
+  const icon = data.icon;
+  const links = data.links;
+  const downloads = data.downloads;
+
   return (
     <Flex
       fillWidth
@@ -45,7 +56,7 @@ export default function AboutMe() {
             gap="24"
             alignItems="center"
           >
-            <Flex padding={"4"} />
+            <Flex padding={"32"}></Flex>
             <Flex
               position="relative"
               flex={4}
@@ -59,27 +70,17 @@ export default function AboutMe() {
                 variant="display-strong-s"
                 align={"center"}
               >
-                About Me
+                {title}
               </Heading>
-              <Icon name="chevronDown" />
-              <Text variant={"code-default-s"}>
-                I'm Josh, a solo and self taught developer, working together
-                with my partner, Emily, for ideas and graphics.
-              </Text>
-              <Flex padding={"0"} />
+              <Test />
+              <Flex padding={"4"} />
+              <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
+              <Flex padding={"4"} />
               <Text variant={"code-default-s"}>
                 Ive been teaching myself how to code since 2022, learning
                 multiple languages and frameworks.
               </Text>
-              <Flex gap="24">
-                <Icon name="html" />
-                <Icon name="css" />
-                <Icon name="js" />
-                <Icon name="nextjs" />
-                <Icon name="java" />
-                <Icon name="kotlin" />
-                <Icon name="flutter" />
-              </Flex>
+
               <Text variant={"code-default-s"}>
                 At the time of writing this, I have 1 Minecraft mod published
                 with 189 downloads. It isn't many, but its a massive achievement

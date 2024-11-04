@@ -65,7 +65,15 @@ export default function Home() {
           gap="l"
         >
           <Flex mobileDirection="column" fillWidth gap="24">
-            <Flex position="relative" flex={2} paddingTop="56" paddingX="xl">
+            <Flex
+              position="relative"
+              flex={2}
+              paddingTop="56"
+              paddingX="xl"
+              align={"center"}
+              alignItems="center"
+              justifyContent={"center"}
+            >
               <Logo
                 size="custom"
                 icon={false}
@@ -80,6 +88,7 @@ export default function Home() {
               marginBottom="104"
               direction="column"
               alignItems="center"
+              height={"160"}
             >
               <InlineCode
                 className="shadow-m"
@@ -95,15 +104,17 @@ export default function Home() {
                 </span>
               </InlineCode>
               <Heading
-                wrap="balance"
+                wrap="wrap"
                 variant="display-strong-s"
                 align={"center"}
+                padding={"s"}
+                gap={"s"}
               >
-                <span className="font-code">
+                <Text variant="display-strong-s">
                   <LetterFx trigger="instant" speed={"slow"}>
                     A Solo Developer, 100% Self-Taught
                   </LetterFx>
-                </span>
+                </Text>
               </Heading>
               <Badge arrow={true} href="/aboutme">
                 About Me
@@ -111,13 +122,9 @@ export default function Home() {
             </Flex>
           </Flex>
           <Grid
-            radius="l"
-            border="neutral-medium"
-            borderStyle="solid-1"
             columns="repeat(3, 1fr)"
             tabletColumns="1col"
             mobileColumns="1col"
-            fillWidth
           >
             {links.map((link) => (
               <Link
@@ -126,11 +133,18 @@ export default function Home() {
                 key={link.href}
                 href={link.href}
               >
-                <Flex fillWidth paddingY="8" gap="8" direction="column">
-                  <Flex fillWidth gap="12" alignItems="center">
-                    <Text variant="body-strong-m" onBackground="neutral-strong">
-                      {link.title}
-                    </Text>
+                <Flex
+                  paddingY="8"
+                  gap="8"
+                  direction="column"
+                  padding={"24"}
+                  borderStyle={"solid-1"}
+                  border={"brand-strong"}
+                  radius="m"
+                  alignItems="center"
+                >
+                  <Flex gap="12" alignItems="center">
+                    <Text variant="body-strong-m">{link.title}</Text>
                     <Icon size="s" name="arrowUpRight" />
                   </Flex>
                   <Text variant="body-default-s" onBackground="neutral-weak">
