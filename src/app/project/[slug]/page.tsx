@@ -94,12 +94,11 @@ export default function ClientProject({
 
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
-              <Flex padding={"4"} />
+              <Flex>Downloads: {downloads}</Flex>
 
-              <Flex padding={"4"} />
+              <Flex padding={"2"} />
 
               <Markdown>{body}</Markdown>
-              <Flex padding={"4"} />
             </Flex>
           </Flex>
         </Flex>
