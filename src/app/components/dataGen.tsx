@@ -9,7 +9,7 @@ export const DataGen = (modrinthid: any) => {
     curseforge: "",
     internal: "",
   });
-  const [icon, setIcon] = useState("");
+  const [icon, setIcon] = useState("/trademark/icon-dark");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [git, setGit] = useState("");
@@ -58,7 +58,7 @@ export const DataGen = (modrinthid: any) => {
         curseforge: curseforgeData ? curseforgeData.links.websiteUrl : "",
         internal: modrinthData ? `/project/${modrinthData.slug}` : "",
       });
-      setIcon(modrinthData ? modrinthData.icon_url : "");
+      setIcon(modrinthData ? modrinthData.icon_url : "/trademark/icon-dark");
       setTitle(modrinthData ? modrinthData.title : "");
       setDescription(modrinthData ? modrinthData.description : "");
       setGit(modrinthData ? modrinthData.source_url : "");

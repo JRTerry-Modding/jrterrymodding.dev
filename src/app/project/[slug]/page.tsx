@@ -6,9 +6,9 @@ import { Flex, Heading } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import Image from "next/image";
-import Markdown from "./md.mdx";
+import Markdown from "react-markdown";
 
-export default function Project({
+export default function ClientProject({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -69,6 +69,7 @@ export default function Project({
               marginBottom="104"
               direction="column"
               alignItems="center"
+              align={"center"}
             >
               <Heading
                 wrap="balance"
@@ -81,7 +82,8 @@ export default function Project({
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
               <Flex padding={"4"} />
-              <Markdown />
+
+              <Markdown>{body}</Markdown>
               <Flex padding={"4"} />
             </Flex>
           </Flex>
