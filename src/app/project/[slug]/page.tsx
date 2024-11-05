@@ -1,18 +1,14 @@
 "use client";
 
-import React, { Fragment, use, useEffect, useState } from "react";
+import React, { use } from "react";
 import { DataGen } from "@/app/components/dataGen";
 import { Flex, Heading } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import Image from "next/image";
-import { compile, run } from "@mdx-js/mdx";
+import Markdown from "./md.mdx";
 
-import * as runtime from "react/jsx-runtime";
-import { Content } from "next/dist/compiled/@next/font/dist/google";
-import Page from "@/app/components/project";
-
-export default async function Project({
+export default function Project({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -25,11 +21,8 @@ export default async function Project({
   const icon = data.icon;
   const links = data.links;
   const downloads = data.downloads;
+  const body = data.body;
 
-  //
-  //
-
-  //
   return (
     <Flex
       fillWidth
@@ -88,8 +81,7 @@ export default async function Project({
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
               <Flex padding={"4"} />
-              <Page />
-
+              <Markdown />
               <Flex padding={"4"} />
             </Flex>
           </Flex>
