@@ -2,7 +2,7 @@
 
 import React, { use } from "react";
 import { DataGen } from "@/app/components/dataGen";
-import { Flex, Heading } from "@/once-ui/components";
+import { Flex, Heading, Icon } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import Image from "next/image";
@@ -17,7 +17,7 @@ export default function ClientProject({
   const data = DataGen(slug);
 
   const title = data.title;
-  const description = data.description;
+
   const icon = data.icon;
   const links = data.links;
   const downloads = data.downloads;
@@ -78,9 +78,24 @@ export default function ClientProject({
               >
                 {title}
               </Heading>
+              <Flex>
+                {
+                  <a href={links.modrinth} target="_blank" rel="noreferrer">
+                    <Icon name={"modrinth"} size={"m"}></Icon>
+                  </a>
+                }
+                {<Flex padding={"xs"} />}
+                {
+                  <a href={links.curseforge} target="_blank" rel="noreferrer">
+                    <Icon name={"curseforge"} size={"m"}></Icon>
+                  </a>
+                }
+              </Flex>
 
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
+              <Flex padding={"4"} />
+
               <Flex padding={"4"} />
 
               <Markdown>{body}</Markdown>
