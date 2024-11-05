@@ -45,7 +45,7 @@ export const DataGen = (modrinthid: any) => {
             .catch(() => null)
         : null;
 
-      const curseforgeData = curseforgePreData.data[0];
+      const curseforgeData = curseforgePreData?.data[0];
 
       setDownloads(
         (modrinthData ? modrinthData.downloads : 0) +

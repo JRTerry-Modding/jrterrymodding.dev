@@ -10,6 +10,7 @@ import { compile, run } from "@mdx-js/mdx";
 
 import * as runtime from "react/jsx-runtime";
 import { Content } from "next/dist/compiled/@next/font/dist/google";
+import Page from "@/app/components/project";
 
 export default async function Project({
   params,
@@ -27,26 +28,6 @@ export default async function Project({
 
   //
   //
-  const [mdxModule, setMdxModule] = useState();
-  const Body = mdxModule ? mdxModule.default : Fragment;
-
-  useEffect(
-    function () {
-      (async function () {
-        setMdxModule(await run(body, { ...runtime, baseUrl: import.meta.url }));
-      })();
-    },
-    [body],
-  );
-
-  //fix doesnt work in use client
-  // https://mdxjs.com/guides/mdx-on-demand/
-  const body = String(
-    await compile(data.body, {
-      outputFormat: "function-body",
-      /* …otherOptions */
-    }),
-  );
 
   //
   return (
@@ -107,7 +88,7 @@ export default async function Project({
               <Flex padding={"4"} />
               <Image src={icon} alt={`${slug} icon`} width={180} height={180} />
               <Flex padding={"4"} />
-              <Content />
+              <Page />
 
               <Flex padding={"4"} />
             </Flex>
