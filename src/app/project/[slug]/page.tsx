@@ -22,7 +22,7 @@ export default function ClientProject({
   const links = data.links;
   const downloads = data.downloads;
   const body = data.body;
-const git = data.git;
+  const git = data.git;
 
   return (
     <Flex
@@ -82,22 +82,21 @@ const git = data.git;
               <Flex>
                 {
                   <a href={links.modrinth} target="_blank" rel="noreferrer">
-                    <Icon name={"modrinth"} size={"m"}></Icon>
+                    <Icon name={"modrinth"} size={"l"}></Icon>
                   </a>
                 }
                 {<Flex padding={"xs"} />}
                 {
                   <a href={links.curseforge} target="_blank" rel="noreferrer">
-                    <Icon name={"curseforge"} size={"m"}></Icon>
+                    <Icon name={"curseforge"} size={"l"}></Icon>
                   </a>
                 }
-{<Flex padding={"xs"} />}
-{
+                {<Flex padding={"xs"} />}
+                {
                   <a href={git} target="_blank" rel="noreferrer">
-                    <Icon name={"github"} size={"m"}></Icon>
+                    <Icon name={"github"} size={"l"}></Icon>
                   </a>
                 }
-
               </Flex>
 
               <Flex padding={"4"} />
