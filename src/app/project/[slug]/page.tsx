@@ -22,6 +22,7 @@ export default function ClientProject({
   const links = data.links;
   const downloads = data.downloads;
   const body = data.body;
+const git = data.git;
 
   return (
     <Flex
@@ -90,6 +91,13 @@ export default function ClientProject({
                     <Icon name={"curseforge"} size={"m"}></Icon>
                   </a>
                 }
+{<Flex padding={"xs"} />}
+{
+                  <a href={git} target="_blank" rel="noreferrer">
+                    <Icon name={"github"} size={"m"}></Icon>
+                  </a>
+                }
+
               </Flex>
 
               <Flex padding={"4"} />
