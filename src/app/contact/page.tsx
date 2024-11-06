@@ -5,6 +5,7 @@ import React from "react";
 import { Flex, Heading, Icon, Text } from "@/once-ui/components";
 import { Footer } from "@/app/components/footer";
 import { Nav } from "@/app/components/nav";
+import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -62,17 +63,15 @@ export default function Contact() {
                 Contact Us
               </Heading>
               <Icon name="chevronDown" />
-              <Text variant={"code-default-s"}>
+              <Text variant={"code-default-xl"}>
                 Want to contact us? For what ever reason it is, feel free!
               </Text>
-              <Flex padding={"64"} />
-              <Heading
-                wrap="balance"
-                variant="display-strong-s"
-                align={"center"}
-              >
-                Page still in progress
-              </Heading>
+              <Flex padding={"24"} />
+              <Text variant={"display-default-xs"}>Email us at:</Text>
+
+              <Link href={"mailto:josh@jrterrymodding.dev"}>
+                <Text variant={"body-strong-l"}>josh@jrterrymodding.dev</Text>
+              </Link>
             </Flex>
           </Flex>
         </Flex>
