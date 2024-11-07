@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({
               label="Contact Us"
               href="/contact"
             />
-            <Button size="s" variant="primary" label="Donate?" href="/donate" />
+            
           </Flex>
         </Flex>
       )}
