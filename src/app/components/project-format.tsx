@@ -13,7 +13,7 @@ export const ProjectFormat = () => {
     >
       {Mods.map(async (mod) => {
         const data = await fetch(
-          `http://localhost:3000/datagen?modrinthid=${mod.modrinthid}`,
+          `https://jrterrymodding.dev/datagen?modrinthid=${mod.modrinthid}`,
           { method: "GET" },
         ).then((res) => res.json());
 

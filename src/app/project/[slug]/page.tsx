@@ -27,7 +27,7 @@ export default function Project({
   useEffect(() => {
     const setInfo = async () => {
       const data = await fetch(
-        `http://localhost:3000/datagen?modrinthid=${slug}`,
+        `https://jrterrymodding.dev/datagen?modrinthid=${slug}`,
         { method: "GET" },
       ).then((res) => res.json());
       setData(data);
