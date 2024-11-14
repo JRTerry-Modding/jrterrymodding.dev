@@ -1,28 +1,48 @@
 "use client";
 
-import React, { use } from "react";
-import { DataGen } from "@/app/components/dataGen";
+import React, {
+  Dispatch,
+  SetStateAction,
+  use,
+  useEffect,
+  useState,
+} from "react";
 import { Flex, Heading, Icon } from "@/once-ui/components";
 import { Nav } from "@/app/components/nav";
 import { Footer } from "@/app/components/footer";
 import Image from "next/image";
 import Markdown from "react-markdown";
+import Loading from "@/app/components/Loading";
 
-export default function ClientProject({
+export default function Project({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  "use client";
   const slug = use(params).slug;
-  const data = DataGen(slug);
+
+  const [data, setData]: [any, Dispatch<SetStateAction<any>>] = useState("");
+
+  useEffect(() => {
+    const setInfo = async () => {
+      const data = await fetch(
+        `http://localhost:3000/datagen?modrinthid=${slug}`,
+        { method: "GET" },
+      ).then((res) => res.json());
+      setData(data);
+    };
+
+    setInfo();
+  }, []);
+
+  if (!data) return <Loading />;
 
   const title = data.title;
-
   const icon = data.icon;
   const links = data.links;
   const downloads = data.downloads;
   const body = data.body;
-  const git = data.git;
 
   return (
     <Flex
@@ -93,7 +113,7 @@ export default function ClientProject({
                 }
                 {<Flex padding={"xs"} />}
                 {
-                  <a href={git} target="_blank" rel="noreferrer">
+                  <a href={links.git} target="_blank" rel="noreferrer">
                     <Icon name={"github"} size={"l"}></Icon>
                   </a>
                 }

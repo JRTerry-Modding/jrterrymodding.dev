@@ -2,7 +2,6 @@ import { Mods } from "@/app/components/mods";
 import React from "react";
 import { Button, Flex, Grid, Icon, Text } from "@/once-ui/components";
 import Image from "next/image";
-import { DataGen } from "@/app/components/dataGen";
 
 export const ProjectFormat = () => {
   return (
@@ -12,8 +11,11 @@ export const ProjectFormat = () => {
       padding={"32"}
       mobileColumns="1col"
     >
-      {Mods.map((mod) => {
-        const data = DataGen(mod.modrinthid);
+      {Mods.map(async (mod) => {
+        const data = await fetch(
+          `http://localhost:3000/datagen?modrinthid=${mod.modrinthid}`,
+          { method: "GET" },
+        ).then((res) => res.json());
 
         const title = data.title;
         const description = data.description;

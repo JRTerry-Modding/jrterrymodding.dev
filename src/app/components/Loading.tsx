@@ -1,11 +1,8 @@
+import { Flex, Heading } from "@/once-ui/components";
 import React from "react";
-
-import { Flex } from "@/once-ui/components";
 import { Footer } from "@/app/components/footer";
-import { Nav } from "@/app/components/nav";
-import { ProjectFormat } from "@/app/components/project-format";
 
-export default async function Projects() {
+export default function Loading() {
   return (
     <Flex
       fillWidth
@@ -15,11 +12,13 @@ export default async function Projects() {
       alignItems="center"
       flex={1}
     >
-      <Nav />
-
       <Flex
         position="relative"
+        as="section"
+        overflow="hidden"
         fillWidth
+        minHeight="0"
+        maxWidth={68}
         direction="column"
         alignItems="center"
         flex={1}
@@ -33,32 +32,26 @@ export default async function Projects() {
           padding="l"
           gap="l"
         >
-          <Flex
-            mobileDirection="column"
-            fillWidth
-            fillHeight
-            gap="24"
-            alignItems="center"
-          >
-            <Flex padding={"32"}></Flex>
+          <Flex mobileDirection="column" fillWidth gap="24">
             <Flex
               position="relative"
               flex={4}
               gap="24"
+              marginBottom="104"
               direction="column"
               alignItems="center"
             >
-              <Flex>
-                <Flex
-                  position="relative"
-                  flex={4}
-                  gap="24"
-                  marginBottom="104"
-                  alignItems="center"
-                >
-                  <ProjectFormat />
-                </Flex>
-              </Flex>
+              <Heading
+                wrap="balance"
+                variant="display-strong-s"
+                align={"center"}
+              >
+                <span className="font-code">
+                  <Flex direction="column" padding="24" gap="8">
+                    Loading...
+                  </Flex>
+                </span>
+              </Heading>
             </Flex>
           </Flex>
         </Flex>
