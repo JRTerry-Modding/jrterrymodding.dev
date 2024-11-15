@@ -3,6 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
   const modrinthid = request.nextUrl.searchParams.get("modrinthid");
 
+  if (!modrinthid) {
+    return NextResponse.json({ error: "ModrinthId needed." }, { status: 404 });
+  }
+
   const modrinthData = modrinthid
     ? await fetch(`https://api.modrinth.com/v2/project/${modrinthid}`, {
         method: "GET",
@@ -11,11 +15,17 @@ export async function GET(request: NextRequest) {
         .catch(() => null)
     : null;
 
+  if (!modrinthData)
+    return NextResponse.json(
+      { error: "ModrinthId not found." },
+      { status: 404 },
+    );
+
   const curseApiKey = process.env.NEXT_PUBLIC_CURSEFORGE_API_KEY
     ? process.env.NEXT_PUBLIC_CURSEFORGE_API_KEY.split(",").join("$")
     : "";
 
-  const cursePreData = modrinthid
+  const cursePreData = modrinthData
     ? await fetch(
         `https://api.curseforge.com/v1/mods/search?gameId=432&slug=${modrinthData.slug}`,
         {
