@@ -63,7 +63,7 @@ export default function AboutMe() {
               </Heading>
               <Icon name="chevronDown" />
               <Text variant={"code-default-s"}>
-                I'm Josh, a solo and self taught developer, working together
+                I'm a solo and self taught developer, working together
                 with my partner, Emily, for ideas and graphics.
               </Text>
               <Flex padding={"0"} />
